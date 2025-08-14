@@ -19,8 +19,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
   @override
   void initState() {
     super.initState();
-    // Saat halaman dimuat, isi field dengan username saat ini
-    // listen: false karena kita hanya butuh data awal, tidak perlu rebuild saat ada perubahan
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
     _usernameController.text = authProvider.currentUser?.username ?? '';
     _bioController.text = authProvider.currentUser?.bio ?? '';
@@ -41,7 +39,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             backgroundColor: Colors.green,
           ),
         );
-        Navigator.pop(context); // Kembali ke halaman profil
+        Navigator.pop(context); 
       }
     }
   }
@@ -83,7 +81,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 },
               ),
               const SizedBox(height: 20),
-              // --- TAMBAHKAN FIELD BIO DI SINI ---
               TextFormField(
                 controller: _bioController,
                 decoration: const InputDecoration(

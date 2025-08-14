@@ -15,29 +15,29 @@ class AuthProvider extends ChangeNotifier {
   UserModel? get currentUser => _currentUser;
 
   AuthProvider() {
-    // Saat provider dibuat, langsung coba muat data pengguna & login otomatis
+
     loadUsers();
   }
 
   // --- Fungsi Autentikasi ---
 
   Future<bool> register(String username, String email, String password) async {
-    // Cek apakah email sudah terdaftar
+
     if (_users.any((user) => user.email.toLowerCase() == email.toLowerCase())) {
-      return false; // Email sudah ada
+      return false; 
     }
     
     final newUser = UserModel(
       id: const Uuid().v4(),
       username: username,
       email: email,
-      password: password, // Ingat: ini hanya simulasi
+      password: password, 
       joinDate: DateTime.now(),
     );
     _users.add(newUser);
-    await saveUsers(); // Simpan daftar pengguna baru
+    await saveUsers(); 
     notifyListeners();
-    return true; // Registrasi berhasil
+    return true; 
   }
 
   Future<bool> login(String email, String password) async {
@@ -47,20 +47,20 @@ class AuthProvider extends ChangeNotifier {
       );
       _currentUser = user;
       
-      // Simpan ID user yang login untuk auto-login nanti
+      
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('current_user_id', user.id);
 
       notifyListeners();
-      return true; // Login berhasil
+      return true; 
     } catch (e) {
-      return false; // User tidak ditemukan atau password salah
+      return false; 
     }
   }
 
   Future<void> logout() async {
     _currentUser = null;
-    // Hapus data sesi login
+    
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('current_user_id');
     notifyListeners();
@@ -82,20 +82,20 @@ class AuthProvider extends ChangeNotifier {
       final decodedData = json.decode(data) as List;
       _users.addAll(decodedData.map((d) => UserModel.fromJson(d)));
     }
-    // Tambahkan user default jika belum ada
+    
     if (!_users.any((u) => u.email == 'reviewer@demo.com')) {
       _users.add(UserModel(
         id: const Uuid().v4(),
         username: 'besto',
         email: 'besto',
-        password: 'besto', // Password default
+        password: 'besto', 
         joinDate: DateTime.now(),
         bio: 'Akun demo untuk review',
         themeMode: 'system',
       ));
       await saveUsers();
     }
-    // Setelah semua user dimuat, coba login otomatis
+    
     await _tryAutoLogin();
     notifyListeners();
   }
@@ -107,7 +107,7 @@ class AuthProvider extends ChangeNotifier {
       try {
         _currentUser = _users.firstWhere((user) => user.id == userId);
       } catch (e) {
-        // User yang tersimpan tidak ditemukan di daftar, mungkin data korup
+  
         _currentUser = null;
       }
     }
@@ -120,10 +120,10 @@ class AuthProvider extends ChangeNotifier {
         final userInList = _users.firstWhere((user) => user.id == _currentUser!.id);
 
         _currentUser!.username = newUsername;
-        _currentUser!.bio = newBio; // <-- Tambahkan ini
+        _currentUser!.bio = newBio; 
 
         userInList.username = newUsername;
-        userInList.bio = newBio; // <-- Tambahkan ini
+        userInList.bio = newBio; 
 
         await saveUsers();
         notifyListeners();

@@ -10,7 +10,6 @@ class TaskCard extends StatelessWidget {
 
   const TaskCard({super.key, required this.task, required this.onTap});
 
-  // Helper function untuk membangun countdown string
   String _buildCountdownString(Duration difference) {
     if (difference.isNegative) {
       return 'Telah lewat';
@@ -27,9 +26,7 @@ class TaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // --- LOGIKA UTAMA ADA DI SINI ---
 
-    // 1. Tentukan warna kartu berdasarkan status 'isCompleted'
     final Color cardColor;
     if (task.isCompleted) {
       cardColor = Colors.grey.shade400;
@@ -37,18 +34,15 @@ class TaskCard extends StatelessWidget {
       cardColor = task.color ?? Colors.blueAccent;
     }
 
-    // 2. Tentukan teks status
     final String statusText = task.isCompleted ? 'completed' : 'todo';
 
-    // 3. Helper function untuk format waktu (bisa diletakkan di dalam build atau di luar)
     String formatTime(TimeOfDay? time) {
       if (time == null) return '';
       final now = DateTime.now();
       final dt = DateTime(now.year, now.month, now.day, time.hour, time.minute);
-      return DateFormat.jm().format(dt); // Format: 8:00 AM
+      return DateFormat.jm().format(dt); 
     }
 
-    // 4. Siapkan waktu mulai untuk countdown
     DateTime? taskStartTime;
     if (task.startTime != null) {
       final now = DateTime.now();
@@ -60,8 +54,7 @@ class TaskCard extends StatelessWidget {
         task.startTime!.minute,
       );
     }
-    
-    // --- AKHIR LOGIKA UTAMA ---
+  
 
     return GestureDetector(
       onTap: onTap,
@@ -69,7 +62,7 @@ class TaskCard extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 8.0),
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-          color: cardColor, // Gunakan variabel cardColor yang sudah kita tentukan
+          color: cardColor, 
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Row(

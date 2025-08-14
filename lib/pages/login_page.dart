@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_list_app/pages/register_page.dart'; // Error? Nanti kita buat file ini.
+import 'package:todo_list_app/pages/register_page.dart'; 
 import 'package:todo_list_app/provider/auth_provider.dart';
 
 class LoginPage extends StatefulWidget {

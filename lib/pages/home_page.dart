@@ -14,7 +14,6 @@ class HomePage extends StatelessWidget {
     final todoProvider = Provider.of<TodoProvider>(context);
     final today = DateTime.now();
     
-    // Filter tugas berdasarkan yang belum selesai dan sudah selesai
     final uncompletedTasks = todoProvider.tasks.where((t) => !t.isCompleted).toList();
     final completedTasks = todoProvider.tasks.where((t) => t.isCompleted).toList();
 
@@ -81,7 +80,6 @@ class HomePage extends StatelessWidget {
                   return TaskCard(
                     task: task,
                     onTap: () {
-                       // Navigasi ke halaman edit saat card di-tap
                        Navigator.push(
                         context,
                         MaterialPageRoute(

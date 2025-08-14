@@ -1,7 +1,4 @@
 // Lokasi: lib/pages/add_edit_task_page.dart
-// (Perlu banyak update di sini)
-// ... Ini akan menjadi sangat panjang. Mari kita sederhanakan untuk fungsionalitas inti
-// tapi dengan tampilan baru.
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -26,7 +23,7 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
   late DateTime _selectedDate;
   TimeOfDay? _startTime;
   TimeOfDay? _endTime;
-  Color _selectedColor = Colors.blue; // Default color
+  Color _selectedColor = Colors.blue; 
 
   final List<Color> _colorOptions = [
     Colors.blue.shade300,
@@ -220,10 +217,8 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
               ),
               const SizedBox(height: 40),
 
-              // === GANTI BAGIAN TOMBOL SIMPAN DENGAN INI ===
               Row(
                 children: [
-                  // Tombol "Tandai Selesai" hanya muncul di mode edit
                   if (isEditMode)
                     Expanded(
                       child: OutlinedButton(

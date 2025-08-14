@@ -5,13 +5,12 @@ class TodoModel {
   final String id;
   String title;
   String note;
-  DateTime date; // Tanggal tugas
+  DateTime date; 
   bool isCompleted;
 
-  // --- Properti Baru ---
   TimeOfDay? startTime;
   TimeOfDay? endTime;
-  Color? color; // Warna untuk card
+  Color? color; 
 
   TodoModel({
     required this.id,
@@ -23,8 +22,6 @@ class TodoModel {
     this.endTime,
     this.color,
   });
-
-  // Perbarui toJson dan fromJson
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -53,7 +50,7 @@ class TodoModel {
       isCompleted: json['isCompleted'],
       startTime: parseTime(json['startTime']),
       endTime: parseTime(json['endTime']),
-      color: json['color'] != null ? Color(json['color']) : null, // Buat warna dari integer
+      color: json['color'] != null ? Color(json['color']) : null, 
     );
   }
 }

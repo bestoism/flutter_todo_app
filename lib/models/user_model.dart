@@ -6,8 +6,8 @@ class UserModel {
   final String email;
   final String password;
   final DateTime joinDate;
-  String bio; // <-- Tambahkan ini
-  String themeMode; // 'system', 'light', atau 'dark' <-- Tambahkan ini
+  String bio; 
+  String themeMode; 
 
   UserModel({
     required this.id,
@@ -15,8 +15,8 @@ class UserModel {
     required this.email,
     required this.password,
     required this.joinDate,
-    this.bio = 'Flutter enthusiast!', // Nilai default
-    this.themeMode = 'system', // Nilai default
+    this.bio = 'Flutter enthusiast!', 
+    this.themeMode = 'system', 
   });
 
   Map<String, dynamic> toJson() {
@@ -26,8 +26,8 @@ class UserModel {
       'email': email,
       'password': password,
       'joinDate': joinDate.toIso8601String(),
-      'bio': bio, // <-- Tambahkan ini
-      'themeMode': themeMode, // <-- Tambahkan ini
+      'bio': bio, 
+      'themeMode': themeMode, 
     };
   }
 
@@ -38,8 +38,8 @@ class UserModel {
       email: json['email'],
       password: json['password'],
       joinDate: DateTime.parse(json['joinDate']),
-      bio: json['bio'] ?? 'Flutter enthusiast!', // Fallback jika data lama tidak ada bio
-      themeMode: json['themeMode'] ?? 'system', // Fallback jika data lama tidak ada themeMode
+      bio: json['bio'] ?? 'Flutter enthusiast!', 
+      themeMode: json['themeMode'] ?? 'system', 
     );
   }
 }
