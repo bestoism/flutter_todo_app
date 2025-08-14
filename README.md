@@ -30,25 +30,18 @@ Aplikasi ini mencakup berbagai fitur yang dibagi menjadi tiga tingkatan, dari da
 
 ## 📸 Screenshot Aplikasi
 
-<!-- 
-    PETUNJUK: 
-    1. Jalankan aplikasi Anda di emulator.
-    2. Ambil beberapa screenshot yang menampilkan fitur-fitur terbaik (Halaman Utama dengan Countdown, Dark Mode, Halaman Profil, Halaman Tambah Tugas).
-    3. Buka tab "Issues" di repository GitHub Anda, buat "New Issue" palsu, lalu seret dan lepas gambar Anda ke sana. GitHub akan meng-upload gambar dan memberi Anda link Markdown.
-    4. Salin link Markdown tersebut dan tempel di sini. Hapus petunjuk ini setelah selesai.
--->
-
 | Halaman Utama (Light) | Halaman Utama (Dark) | Halaman Profil |
 | :-------------------: | :------------------: | :------------: |
-| ![Screenshot 1](<img width="353" height="763" alt="image" src="https://github.com/user-attachments/assets/a3374a6e-73f9-4240-8c85-2edb589540c3" />
-) | ![Screenshot 2](<img width="350" height="758" alt="image" src="https://github.com/user-attachments/assets/e1ff90fa-14d5-4f75-9b9a-0ef2610b198e" />
-) | ![Screenshot 3](<img width="351" height="760" alt="image" src="https://github.com/user-attachments/assets/b0fcfc64-9929-4e3c-bc95-961cd266e42d" />
-)
-) |
+| ![Halaman Utama Light](https://github.com/user-attachments/assets/a3374a6e-73f9-4240-8c85-2edb589540c3) | ![Halaman Utama Dark](https://github.com/user-attachments/assets/e1ff90fa-14d5-4f75-9b9a-0ef2610b198e) | ![Halaman Profil](https://github.com/user-attachments/assets/b0fcfc64-9929-4e3c-bc95-961cd266e42d) |
 
-| Halaman Tambah Tugas | Kartu Tugas dengan Countdown |
-| :------------------: | :-------------------------: |
-| ![Screenshot 4](URL_SCREENSHOT_ANDA_DISINI) | ![Screenshot 5](URL_SCREENSHOT_ANDA_DISINI) |
+| Halaman Tambah Tugas | Halaman Login | Halaman Register |
+| :------------------: | :-----------: | :--------------: |
+| ![Halaman Tambah Tugas](https://github.com/user-attachments/assets/ee799d44-c43e-49f8-b54b-2e43a9b34b37) | ![Halaman Login](https://github.com/user-attachments/assets/2e0be3e7-87a9-4eda-bbc2-d8a9a5d8b8bf) | ![Halaman Register](https://github.com/user-attachments/assets/cc41dce0-da9f-4038-b2ac-b5745d3eaba7) |
+
+| Kartu Tugas dengan Countdown |
+| :---------------------------: |
+| ![Countdown Timer](https://github.com/user-attachments/assets/58ffb3d5-33db-49d4-ad55-64b1be8ec206) |
+
 
 ## 🛠️ Teknologi & Stack
 
@@ -69,13 +62,13 @@ Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah ber
 
 1.  **Clone Repository**
     ```bash
-    git clone https://github.com/USERNAME_ANDA/NAMA_REPOSITORY_ANDA.git
+    git clone https://github.com/bestoism/flutter_todo_app.git
     ```
-    <!-- Ganti USERNAME_ANDA dan NAMA_REPOSITORY_ANDA dengan link repo Anda -->
+    <!-- URL sudah disesuaikan dengan yang Anda gunakan sebelumnya -->
 
 2.  **Masuk ke Direktori Proyek**
     ```bash
-    cd nama-folder-proyek
+    cd flutter_todo_app
     ```
 
 3.  **Install Dependencies**
